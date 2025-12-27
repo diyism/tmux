@@ -1,3 +1,18 @@
+    $ cat ~/.tmux.conf
+    set -g default-command "${SHELL}"
+    set -g mouse on
+    
+    # Copy to system clipboard when selecting with mouse
+    bind-key -T copy-mode MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
+    
+    # 加载插件
+    run-shell ~/.tmux/plugins/tmux-resurrect/resurrect.tmux
+    run-shell ~/.tmux/plugins/tmux-continuum/continuum.tmux
+    
+    # 会话持久化
+    set -g @continuum-restore 'on'  # 启动时自动恢复
+    set -g @continuum-save-interval '3'  # 每3分钟自动保存
+
 # Welcome to tmux!
 
 tmux is a terminal multiplexer: it enables a number of terminals to be created,
