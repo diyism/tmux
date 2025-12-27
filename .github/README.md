@@ -13,6 +13,12 @@
     set -g @continuum-restore 'on'  # 启动时自动恢复
     set -g @continuum-save-interval '3'  # 每3分钟自动保存
 
+    $ grep -i -A5 tmux ~/.bashrc
+    # 在 tmux 中禁用 exit, 用"\exit"来退出tmux pane
+    if [ -n "$TMUX" ]; then
+      alias exit='echo "在 tmux 中请用 Ctrl+b d 分离会话"'
+    fi
+
 # Welcome to tmux!
 
 tmux is a terminal multiplexer: it enables a number of terminals to be created,
