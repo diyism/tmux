@@ -1,3 +1,4 @@
+# Start
     $ cat ~/.tmux.conf
     set -g default-command "${SHELL}"
     set -g mouse on
