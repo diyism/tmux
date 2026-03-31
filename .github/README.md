@@ -20,6 +20,15 @@
       alias exit='echo "在 tmux 中请用 Ctrl+b d 分离会话"'
     fi
 
+    # wezterm与xfce4-terminal很像, 把appimage复制到/usr/bin/wezterm就可以直接用
+    # wezterm内 直接运行 ./brow6el-x86_64.AppImage 确实可以跑起来浏览器, 完美支持sixel
+    # wezterm内 运行 tmux后再运行 brow6el则无法正常展示网页, 即使加了~/.tmux.conf 配置:
+    set -g allow-passthrough on
+    set -ga terminal-overrides ",*:Tc"      # Truecolor
+    set -ga terminal-overrides ",*:Sixel"   # Sixel 支持
+    # 虽然tmux里跑 img2sixel正常:
+    img2sixel  /usr/share/icons/hicolor/48x48/apps/kali-paros.png
+
 # Welcome to tmux!
 
 tmux is a terminal multiplexer: it enables a number of terminals to be created,
