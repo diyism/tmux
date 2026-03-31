@@ -26,7 +26,7 @@
     set -g allow-passthrough on
     set -ga terminal-overrides ",*:Tc"      # Truecolor
     set -ga terminal-overrides ",*:Sixel"   # Sixel 支持
-    # 虽然tmux里跑 img2sixel正常:
+    # 虽然wezterm内tmux里跑 img2sixel正常:
     img2sixel  /usr/share/icons/hicolor/48x48/apps/kali-paros.png
 
 # Welcome to tmux!
