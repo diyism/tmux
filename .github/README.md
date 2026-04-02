@@ -29,6 +29,8 @@
     # 虽然wezterm内tmux里跑 img2sixel正常:
     img2sixel  /usr/share/icons/hicolor/48x48/apps/kali-paros.png
 
+    最终用 wezterm 替代xfce4-terminal+tmux, 参考: https://github.com/diyism/resurrect.wezterm
+
 # Welcome to tmux!
 
 tmux is a terminal multiplexer: it enables a number of terminals to be created,
